@@ -1,4 +1,4 @@
-﻿open System
+open System
 
 let rec NOD x y z=
     let z1 = z-1
@@ -15,7 +15,20 @@ let rec f x func s a =
             s
 
 
+let rec e x func s a = 
+        if x <> 1 then 
+            if x%a=0 then 
+                let x1 = x/a
+                let s1 = func s a-1
+                e x1 func s1 a
+            else
+                let a1 = a + 1
+                e x func s a1
+        else
+            s
 
+let  E x func s =
+    e x func s 2
 
 let F x func s =
     f x func s x
@@ -25,6 +38,10 @@ let main argv =
     Console.WriteLine("Введите число: ")
     let x = int(Console.ReadLine())
     let res = F x (fun x y -> x+y) 0
-    Console.Write("Результат: ")
+    Console.Write("Результат NOD: ")
     Console.WriteLine res
+
+    let res1 = E x (fun x y -> x*y) 1
+    Console.Write("Результат E: ")
+    Console.WriteLine res1
     0
