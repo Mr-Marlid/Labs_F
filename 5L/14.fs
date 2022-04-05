@@ -11,9 +11,9 @@ let F x func s =
         
 [<EntryPoint>]
 let main argv =
-    Console.WriteLine("Number: ")
+    Console.WriteLine("Введите число: ")
     let x = int(Console.ReadLine())
-    let result = F x (fun x y -> x+y) 0
-    Console.Write("Result: ")
-    Console.WriteLine result
+    let res = F x (fun x y -> x+y) 0
+    Console.Write("Результат: ")
+    Console.WriteLine res
     0
