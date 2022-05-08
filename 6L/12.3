@@ -4,6 +4,8 @@ let rec f a i max n
     if (i<n) then
         if (a[i]>max) then let Max = a[i]
         else let Max = max
+        let i1 = i+1
+        f a i1 Max n
     else max
 
 [<EntryPoint>]
