@@ -14,7 +14,7 @@ let rec F list n =
         let n1 = n - 1
         F L n1
     else list
-let rec f11 list L func x y
+let rec f11 list L func x y =
     match list with
     |head::tail ->  
         if (x<>0) then 
@@ -29,11 +29,15 @@ let rec f11 list L func x y
         if (x<>0) then
             if (y<>0) then 
                let L1 = (func x y 1)::L
-            else let L1 = (func x 1 1)::L
-        else let L1 = L
-        L1
+               L1
+            else 
+                let L1 = (func x 1 1)::L
+                L1
+        else 
+            let L1 = L
+            L1
 
-let  F11 list func
+let  F11 list func =
     f11 list [] func 0 0
 
 [<EntryPoint>]
