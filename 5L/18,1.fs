@@ -1,4 +1,4 @@
-﻿open System
+open System
 
 let rec prost x y z=
     let z1 = z-1
@@ -10,7 +10,7 @@ let rec f x n a =
     let n1 =n+1
     let a1 = a-1
     if a<>1 then    
-        if prost x a a = 0 then 
+        if prost x a a = 0 && a % 2 = 0 then 
             f x n1 a1
         else f x n a1
     else 
