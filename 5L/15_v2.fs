@@ -13,15 +13,7 @@ let rec f x func s a =
             s
 let F x func s =
     f x func s x-1
-let rec E x y n =
-    let y1 = y - 1
-    if (y>1) then
-        if (prost x y y = 1) then
-            
-            let n1 = n + 1
-            E x y1 n1
-        else E x y1 n
-    else n
+
 [<EntryPoint>]
 let main argv =
     printfn "%A" ("Введите число:")
@@ -34,12 +26,4 @@ let main argv =
     |"Произведение"|"Произведение" -> printfn "%A" (F x (fun x y -> x+y) 0)
     |"Минимум"|"минимум" -> printfn "%A" (F x (fun x y -> if (x<y) then x else y) 0) 
     |"Максимум"|"максимум" -> printfn "%A" (F x (fun x y -> if (x>y) then x else y) 0)
-    printfn "%A" "Число Эйлера " 
-    let x1 = x-1
-    printfn "%A" (E x x1 0)
-    printfn "%A" "Введите второе число для НОД " 
-    let y = int(Console.ReadLine())
-    let y1 = y-1
-    printfn "%A" "НОД "
-    printfn "%A" (prost x y y1)
     0
